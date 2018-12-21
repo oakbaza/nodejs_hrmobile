@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 
 app.get('/get_all_person', (req, res) => {
     mymodel.M_hr_person.get_all_person(function(call){
-        res.send(call)
+        res.send(JSON.stringify(call))
     })
 })
 
