@@ -58,9 +58,18 @@ app.get('/get_all_expenditure',(req,res) => {
 
 app.post('/insert_revenue', function (req, res) {
     var json = req.body
-    res.send('Got a POST request')
     console.log(json)
     mymodel.M_hr_revenue.insert(json)
+})
+
+app.post('/update_revenue',function(req,res){
+    var json = req.body
+    mymodel.M_hr_revenue.update(json)
+})
+
+app.post('/delete_revenue',function(req,res){
+    var json = req.body
+    mymodel.M_hr_revenue.delete_by_re_id(json)
 })
 
 app.listen(port, () => {
