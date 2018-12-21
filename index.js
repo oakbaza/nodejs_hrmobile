@@ -10,27 +10,18 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
-app.get('/', (req, res) => {
-    var rs_ps = mymodel.M_hr_person.get_all_person()
-    res.send(rs_ps)
-    console.log(rs_ps)
+app.get('/get_all_person', (req, res) => {
+    mymodel.M_hr_person.get_all_person(function(call){
+        res.send(call)
+    })
 })
 
 app.get('/user', (req, res) => {
     res.send('Got a GET user')
 })
 
-app.get('/user/:userID/book/:bookID', (req, res) => {
-    console.log("UserID = "+req.param("userID"))
-    res.send(req.params)
-})
-
 app.post('/', function (req, res) {
     res.send('Got a POST request')
-})
-
-app.post('/user', function (req, res) {
-    res.send(req.body.name)
 })
 
 app.listen(port, () => {
