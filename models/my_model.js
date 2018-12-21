@@ -10,3 +10,6 @@ exports.M_hr_revenue = M_hr_revenue
 var M_hr_salary_type = require('./M_hr_salary_type');
 exports.M_hr_salary_type = M_hr_salary_type
 
+var M_hr_currency = require('./M_hr_currency');
+exports.M_hr_currency = M_hr_currency
+

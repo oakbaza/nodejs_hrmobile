@@ -38,12 +38,22 @@ app.get('/get_all_person', (req, res) => {
     })
 })
 
-app.get('/', (req, res) => {
-    res.send('Got a GET user')
+app.get('/get_all_currency',(req,res) => {
+    mymodel.M_hr_currency.get_all_by_active(function (call){
+        res.send(JSON.stringify(call))
+    })
 })
 
-app.get('/user', (req, res) => {
-    res.send('Got a GET user')
+app.get('/get_all_revenue',(req,res) => {
+    mymodel.M_hr_revenue.get_all_by_active(function (call){
+        res.send(JSON.stringify(call))
+    })
+})
+
+app.get('/get_all_expenditure',(req,res) => {
+    mymodel.M_hr_expenditure.get_all_by_active(function (call){
+        res.send(JSON.stringify(call))
+    })
 })
 
 app.post('/', function (req, res) {
