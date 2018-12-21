@@ -34,7 +34,7 @@ var update = function(json){
 
 var delete_by_re_id = function(json){
     var sql = "UPDATE hr_revenue \
-                SET re_active = '"+json.re_active+"', \
+                SET re_active = '"+json.re_active+"' \
                 WHERE re_id = '"+json.re_id+"'";
     mydb.con.query(sql,function(err){
         console.log(err)

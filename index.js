@@ -60,26 +60,17 @@ app.post('/insert_revenue', function (req, res) {
     var json = req.body
     console.log(json)
     mymodel.M_hr_revenue.insert(json)
+    res.end()
 })
 
 app.post('/update_revenue',function(req,res){
     var json = req.body
     mymodel.M_hr_revenue.update(json)
+    res.end()
 })
 
 app.post('/delete_revenue',function(req,res){
     var json = req.body
     mymodel.M_hr_revenue.delete_by_re_id(json)
-})
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`)
-})
-
-app.put('/user', function (req, res) {
-    res.send('Got a PUT request at /user')
-})
-
-app.delete('/user', function (req, res) {
-    res.send('Got a DELETE request at /user')
+    res.end()
 })
