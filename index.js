@@ -74,3 +74,7 @@ app.post('/delete_revenue',function(req,res){
     mymodel.M_hr_revenue.delete_by_re_id(json)
     res.end()
 })
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}!`)
+})
